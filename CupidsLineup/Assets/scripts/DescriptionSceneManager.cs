@@ -38,7 +38,8 @@ public class DescriptionSceneManager : MonoBehaviour {
 
 		mainGirl = girlArray[(int)randomGirl];
 		Debug.Log(mainGirl.personName + " was selected");
-		GetComponent<GameManager>().setMainGirl(mainGirl);
+		//GameObject gameManager = GameObject.Find("GameManager");
+		GameManager.Instance.setMainGirl(mainGirl);
 		
 		LoadDescription(mainGirl);
 	}
@@ -97,7 +98,7 @@ public class DescriptionSceneManager : MonoBehaviour {
 		GirlAttrs girl2 = new GirlAttrs();
 		girl2.personName = "Parvati Patil";
 		girl2.description = "Hi I'm parvati and my favorite colour is pink. Divination 4lyf, peace out.";
-		girl2.feedItems =  new string[] {"Oooh, new pibk shoes!#WinningAtLyf", "Got 100% in my Div. O.W.L.!!!!111"};
+		girl2.feedItems =  new string[] {"Oooh, new pibk shoes!#WinningAtLyf", "Hate balloons bursting :'("};
 		girlArray.Add(girl2);
 	}
 }

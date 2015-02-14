@@ -24,15 +24,18 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public GirlAttrs getMainGirl() {
+		if(mainGirl == null) return new GirlAttrs();
+
 		return mainGirl;
 	}
 
 	public void setMainGirl(GirlAttrs newMainGirl) {
 		mainGirl = newMainGirl;
+
 	}
 
 	public void girlChosen(string chosen) {
-		if(correctLass.Equals(chosen)) {
+		if(mainGirl.personName.Equals(chosen)) {
 			Application.LoadLevel("03_youWin");
 		} else {
 			Application.LoadLevel("04_youLose");

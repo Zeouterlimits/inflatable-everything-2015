@@ -7,7 +7,6 @@ public class GirlEvents : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print ("start");
 		var = GetComponent<GirlSpriteBuilder>().chosenInput;
 		Debug.Log("var value: " + var);
 		
@@ -18,6 +17,7 @@ public class GirlEvents : MonoBehaviour {
 
 		if(Input.GetButtonDown(var)) {
 			Debug.Log("girl clicked");
+			Debug.Log("var value: " + var);
 			print ();
 		}
 
@@ -57,6 +57,6 @@ public class GirlEvents : MonoBehaviour {
 
 	public void print() {
 		Debug.Log(this.name);
-		GetComponent<GameManager>().girlChosen(this.name);
+		GameManager.Instance.girlChosen(this.name);
 	}
 }
