@@ -76,6 +76,7 @@ GameObject:
   - 114: {fileID: 11492224}
   - 50: {fileID: 5092224}
   - 212: {fileID: 21292232}
+  - 61: {fileID: 6129284}
   m_Layer: 0
   m_Name: Girl-Sprite
   m_TagString: Untagged
@@ -162,6 +163,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!61 &6129284
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192232}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 10, y: 10}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11492224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5aa1f4ae9a24649b0d58f85dfad1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosenHead: 1
+  chosenHead: 2
   chosenBody: 1
   chosenLegs: 2
   chosenOther: 2
