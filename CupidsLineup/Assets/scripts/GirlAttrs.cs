@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-		public class GirlAttrs : MonoBehaviour
+		public class GirlAttrs
 		{
 			public int head = 0;
 			public int body = 0;
@@ -9,6 +9,6 @@ using UnityEngine;
 			public int other = 0;
 			public String description;
 			public String personName;
-			public String[] feed;
+			public String[] feedItems;
 		}
 
