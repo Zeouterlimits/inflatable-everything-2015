@@ -75,8 +75,8 @@ GameObject:
   - 114: {fileID: 11492226}
   - 114: {fileID: 11492224}
   - 50: {fileID: 5092224}
-  - 212: {fileID: 21292232}
   - 61: {fileID: 6129284}
+  - 212: {fileID: 21292232}
   m_Layer: 0
   m_Name: Girl-Sprite
   m_TagString: Untagged
@@ -297,7 +297,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21292232
 SpriteRenderer:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192232}

@@ -13,9 +13,13 @@ public class DescriptionSceneManager : MonoBehaviour {
 	List<GirlAttrs> girlArray = new List<GirlAttrs>();
 	GirlAttrs mainGirl;
 	string[] randomFeedItems = {"Weather is perfect for a walk!", ":( it's raining again!", "I hate mondays..", "Just won a Game Jam, so happy!"};
+	float startTime;
+
+	public float difficultyTimeDecider = 3f;
 
 	// Use this for initialization
 	void Start () {
+		startTime = Time.time;
 		girlDescText = GameObject.Find("Desc_DescText").GetComponent<Text>();
 		girlNameText = GameObject.Find("Desc_NameText").GetComponent<Text>();
 		girlFeedText1 = GameObject.Find("Desc_FeedText1").GetComponent<Text>();
@@ -27,8 +31,12 @@ public class DescriptionSceneManager : MonoBehaviour {
 		mainGirl = girlArray[(int)randomGirl];
 		Debug.Log(mainGirl.personName + " was selected");
 		LoadDescription(mainGirl);
-		//wait ();
-		//Application.LoadLevel("02_lineup");
+	}
+
+	void Update() {
+		if(Time.time - startTime > difficultyTimeDecider) {
+			Application.LoadLevel("02_lineup");
+		}
 	}
 
 	IEnumerator wait() {
