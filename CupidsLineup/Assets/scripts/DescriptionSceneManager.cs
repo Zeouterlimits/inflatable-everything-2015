@@ -1,10 +1,11 @@
-﻿using UnityEngine.UI;
+using UnityEngine.UI;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class DescriptionSceneManager : MonoBehaviour {
 
+	Text countDownText;
 	Text girlDescText;
 	Text girlNameText;
 	Text girlFeedText1;
@@ -14,12 +15,18 @@ public class DescriptionSceneManager : MonoBehaviour {
 	GirlAttrs mainGirl;
 	string[] randomFeedItems = {"Weather is perfect for a walk!", ":( it's raining again!", "I hate mondays..", "Just won a Game Jam, so happy!"};
 	float startTime;
+	int countDownTime;
+	int currentTime;
+	int lastKnownTime;
 
 	public float difficultyTimeDecider = 3f;
 
 	// Use this for initialization
 	void Start () {
 		startTime = Time.time;
+		lastKnownTime = (int) startTime;
+		countDownTime = (int)difficultyTimeDecider + 1;
+		countDownText = GameObject.Find("Desc_countDownText").GetComponent<Text>();
 		girlDescText = GameObject.Find("Desc_DescText").GetComponent<Text>();
 		girlNameText = GameObject.Find("Desc_NameText").GetComponent<Text>();
 		girlFeedText1 = GameObject.Find("Desc_FeedText1").GetComponent<Text>();
@@ -37,6 +44,12 @@ public class DescriptionSceneManager : MonoBehaviour {
 	}
 
 	void Update() {
+		currentTime = (int) Time.time;
+		if(currentTime > lastKnownTime && currentTime != lastKnownTime) {
+			lastKnownTime = currentTime;
+			countDownTime--;
+			countDownText.text = countDownTime.ToString();
+		}
 		if(Time.time - startTime > difficultyTimeDecider) {
 			Application.LoadLevel("02_lineup");
 		}
