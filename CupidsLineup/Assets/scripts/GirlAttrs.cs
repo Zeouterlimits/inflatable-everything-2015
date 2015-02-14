@@ -9,6 +9,6 @@ using UnityEngine;
 			public int other = 0;
 			public String description;
 			public String personName;
-			public String[] names;
+			public String[] feed;
 		}
 
