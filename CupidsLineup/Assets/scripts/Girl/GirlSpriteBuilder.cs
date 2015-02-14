@@ -8,6 +8,7 @@ public class GirlSpriteBuilder : MonoBehaviour {
 	public int chosenBody;
 	public int chosenLegs;
 	public int chosenOther;
+	public string chosenInput;
 	
 	Transform childBody;
 	Transform childLegs;
