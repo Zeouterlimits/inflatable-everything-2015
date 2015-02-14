@@ -11,7 +11,8 @@ public class GirlSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainGirl = GetComponent<GameManager>().getMainGirl();
+		//mainGirl = GameManager.Instance.getMainGirl();
+		//mainGirl = GetComponent<GameManager>().getMainGirl();
 
 		Vector3 position1 = new Vector3(-1000f, 0f, 0f);
 		Vector3 position2 = new Vector3(-500f, 0f, 0f);
@@ -31,7 +32,7 @@ public class GirlSpawner : MonoBehaviour {
 		girl1.name = "girl1";
 		girl2.name = "girl2";
 		girl3.name = "girl3";
-		girl4.name = mainGirl.personName;
+		//girl4.name = mainGirl.personName;
 
 		girls.Add(girl1);
 		girls.Add(girl2);
@@ -44,10 +45,10 @@ public class GirlSpawner : MonoBehaviour {
 			girl.GetComponent<GirlSpriteBuilder>().chosenLegs = Random.Range(1,5);
 		}
 
-		girl4.GetComponent<GirlSpriteBuilder>().chosenBody = mainGirl.body;
-		girl4.GetComponent<GirlSpriteBuilder>().chosenHead = mainGirl.head;
-		girl4.GetComponent<GirlSpriteBuilder>().chosenOther = mainGirl.other;
-		girl4.GetComponent<GirlSpriteBuilder>().chosenLegs = mainGirl.legs;
+		//girl4.GetComponent<GirlSpriteBuilder>().chosenBody = mainGirl.body;
+		//girl4.GetComponent<GirlSpriteBuilder>().chosenHead = mainGirl.head;
+		//girl4.GetComponent<GirlSpriteBuilder>().chosenOther = mainGirl.other;
+		//girl4.GetComponent<GirlSpriteBuilder>().chosenLegs = mainGirl.legs;
 
 		girls.Add(girl4);
 
