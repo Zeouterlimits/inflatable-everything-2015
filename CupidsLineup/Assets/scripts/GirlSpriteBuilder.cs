@@ -22,7 +22,10 @@ public class GirlSpriteBuilder : MonoBehaviour {
 		//childHead = Transform.Find("Head");
 
 		if(chosenHead == 1) {
-			head.GetComponent<SpriteRenderer>();
+			Sprite myFruit = Resources.Load("head_normal_eyes", typeof(Sprite)) as Sprite;
+
+			//Texture2D headTexture = (Texture2D) Resources.Load("head_normal_eyes");
+			head.GetComponent<SpriteRenderer>().sprite = myFruit;
 		}
 
 	}
