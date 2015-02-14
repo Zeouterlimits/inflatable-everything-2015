@@ -193,8 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chosenHead: 1
   chosenBody: 1
-  chosenLegs: 1
-  chosenOther: 1
+  chosenLegs: 2
+  chosenOther: 2
 --- !u!212 &21292224
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -214,7 +214,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21292226
