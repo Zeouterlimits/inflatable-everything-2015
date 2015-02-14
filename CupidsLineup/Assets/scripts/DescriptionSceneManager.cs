@@ -28,8 +28,11 @@ public class DescriptionSceneManager : MonoBehaviour {
 		PopulateGirlArray();
 		float randomGirl = Random.Range(0f, 1.9f);
 		Debug.Log("Random number was " + randomGirl);
+
 		mainGirl = girlArray[(int)randomGirl];
 		Debug.Log(mainGirl.personName + " was selected");
+		GetComponent<GameManager>().setMainGirl(mainGirl);
+		
 		LoadDescription(mainGirl);
 	}
 

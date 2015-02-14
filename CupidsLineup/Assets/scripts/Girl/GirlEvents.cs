@@ -57,5 +57,6 @@ public class GirlEvents : MonoBehaviour {
 
 	public void print() {
 		Debug.Log(this.name);
+		GetComponent<GameManager>().girlChosen(this.name);
 	}
 }
