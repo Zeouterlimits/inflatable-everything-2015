@@ -14,6 +14,7 @@ public class DescriptionSceneManager : MonoBehaviour {
 	Text girlFeedText2;
 	Text girlFeedText3;
     List<Person> peopleArray = new List<Person>();
+    List<Person> peopleDone = new List<Person>();
     Person mainGirl;
 	string[] randomFeedItems = {"Weather is perfect for a walk!", ":( it's raining again!", "I hate mondays..", "Just won a Game Jam, so happy!"};
 	float startTime;
@@ -40,7 +41,21 @@ public class DescriptionSceneManager : MonoBehaviour {
 		int randomGirl = Random.Range(0, maxPeople); //Max 4 girls
 		Debug.Log("Random number was " + randomGirl);
 
-		mainGirl = peopleArray[(int)randomGirl];
+		if(GameManager.Instance.getPeopleDoneCount() == maxPeople) {
+		    GameManager.Instance.resetPeopleDone();
+		}
+
+		peopleDone = GameManager.Instance.getPeopleDone();
+
+		mainGirl = peopleArray[randomGirl];
+
+		while(peopleDone.Contains(mainGirl)) {
+		    randomGirl = Random.Range(0, maxPeople); //Max 4 girls
+		    mainGirl = peopleArray[randomGirl];
+		}
+
+		GameManager.Instance.addPeopleDone(mainGirl);
+
 		Debug.Log(mainGirl.personName + " was selected");
 		//GameObject gameManager = GameObject.Find("GameManager");
 		GameManager.Instance.setMainGirl(mainGirl);

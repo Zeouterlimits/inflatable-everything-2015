@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 
 	private Person mainGirl;
 	private List<Person> peopleList;
+	private List<Person> peopleDone;
 	private int maxPeople = 4;
 
 	private static GameManager instance = null;
@@ -24,6 +25,33 @@ public class GameManager : MonoBehaviour {
 			instance = this;
 		}
 		DontDestroyOnLoad(this.gameObject);
+	}
+
+
+	public List<Person> getPeopleDone() {
+		if (peopleDone == null) {
+			resetPeopleDone();
+		}
+		return peopleDone;
+	}
+
+	public void addPeopleDone(Person newPerson) {
+		if (peopleDone == null) {
+			resetPeopleDone();
+		}
+		peopleDone.Add(newPerson);
+	}
+
+	public int getPeopleDoneCount() {
+		if (peopleDone == null) {
+			resetPeopleDone();
+		}
+		return peopleDone.Count;
+	}
+
+	public void resetPeopleDone() {
+		peopleDone = new List<Person>();
+		Debug.Log("RESETTING LIST OF PEOPLE DONE");
 	}
 
 	public int getMaxPeople() {
