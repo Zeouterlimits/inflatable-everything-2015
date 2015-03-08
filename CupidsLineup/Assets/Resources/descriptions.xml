@@ -5,9 +5,9 @@
 		<head>
 			4
 		</head>
-		<torso>
-			3
-		</torso>
+		<body>
+			1
+		</body>
 		<legs>
 			1
 		</legs>
@@ -22,9 +22,9 @@
 		<head>
 			3
 		</head>
-		<torso>
+		<body>
 			2
-		</torso>
+		</body>
 		<legs>
 			2
 		</legs>
@@ -40,9 +40,9 @@
 		<head>
 			4
 		</head>
-		<torso>
+		<body>
 			2
-		</torso>
+		</body>
 		<legs>
 			4
 		</legs>
@@ -57,9 +57,9 @@
 		<head>
 			6
 		</head>
-		<torso>
+		<body>
 			1
-		</torso>
+		</body>
 		<legs>
 			5
 		</legs>
