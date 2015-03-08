@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour {
 
 	public string correctLass;
 
-	private GirlAttrs mainGirl;
+	private Person mainGirl;
 
 	private static GameManager instance = null;
 	
@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(this.gameObject);
 	}
 
-	public GirlAttrs getMainGirl() {
-		if(mainGirl == null) return new GirlAttrs();
+	public Person getMainGirl() {
+		if(mainGirl == null) return new Person();
 
 		return mainGirl;
 	}
 
-	public void setMainGirl(GirlAttrs newMainGirl) {
+	public void setMainGirl(Person newMainGirl) {
 		mainGirl = newMainGirl;
 
 	}

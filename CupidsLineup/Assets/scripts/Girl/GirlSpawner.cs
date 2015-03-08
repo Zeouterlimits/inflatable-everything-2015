@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GirlSpawner : MonoBehaviour {
 
 	public GameObject spriteToDuplicate;
-	private GirlAttrs mainGirl;
+	private Person mainGirl;
 
 	private List<GameObject> girls = new List<GameObject>();
 

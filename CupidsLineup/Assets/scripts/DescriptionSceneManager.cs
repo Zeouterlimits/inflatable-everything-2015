@@ -11,8 +11,8 @@ public class DescriptionSceneManager : MonoBehaviour {
 	Text girlFeedText1;
 	Text girlFeedText2;
 	Text girlFeedText3;
-	List<GirlAttrs> girlArray = new List<GirlAttrs>();
-	GirlAttrs mainGirl;
+    List<Person> girlArray = new List<Person>();
+    Person mainGirl;
 	string[] randomFeedItems = {"Weather is perfect for a walk!", ":( it's raining again!", "I hate mondays..", "Just won a Game Jam, so happy!"};
 	float startTime;
 	int countDownTime;
@@ -60,7 +60,7 @@ public class DescriptionSceneManager : MonoBehaviour {
 		yield return new WaitForSeconds(3);
 	}
 
-	void LoadDescription(GirlAttrs girl) {
+	void LoadDescription(Person girl) {
 		girlNameText.text = girl.personName;
 		girlDescText.text = GetGirlDescFromName(girl.personName);
 		//Manage feed items
@@ -90,12 +90,12 @@ public class DescriptionSceneManager : MonoBehaviour {
 	}
 
 	void PopulateGirlArray(){
-		GirlAttrs girl1 = new GirlAttrs();
+		Person girl1 = new Person();
 		girl1.personName = "Hannah Abbot";
 		girl1.description = "I love cheese and bread and butter, with or without pickles. Balloons are my spirit animal.";
 		girl1.feedItems =  new string[] {"OMG LOL I <3 CHEESE", "AMAONAZING SISTA, WELL DONE AT LIFE @ppat"};
 		girlArray.Add(girl1);
-		GirlAttrs girl2 = new GirlAttrs();
+		Person girl2 = new Person();
 		girl2.personName = "Parvati Patil";
 		girl2.description = "Hi I'm parvati and my favorite colour is pink. Divination 4lyf, peace out.";
 		girl2.feedItems =  new string[] {"Oooh, new pibk shoes!#WinningAtLyf", "Hate balloons bursting :'("};
