@@ -8,6 +8,7 @@ public class GameOverButtons : MonoBehaviour {
 	}
 
 	public void onClickMainMenu() {
+		GameManager.Instance.resetCurrentWinStreak();
 		Application.LoadLevel("00_top_menu");
 	}
 }

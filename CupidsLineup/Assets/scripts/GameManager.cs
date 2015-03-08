@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	private List<Person> peopleList;
 	private List<Person> peopleDone;
 	private int maxPeople = 4;
+	private int currentStreak = 0;
 
 	private static GameManager instance = null;
 	
@@ -27,6 +28,17 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(this.gameObject);
 	}
 
+	public int getCurrentWinStreak() {
+		return currentStreak;
+	}
+
+	public void incrementCurrentWinStreak() {
+		currentStreak++;
+	}
+
+	public void resetCurrentWinStreak() {
+		currentStreak = 0;
+	}
 
 	public List<Person> getPeopleDone() {
 		if (peopleDone == null) {
@@ -82,8 +94,10 @@ public class GameManager : MonoBehaviour {
 
 	public void girlChosen(string chosen) {
 		if(mainGirl.personName.Equals(chosen)) {
+			GameManager.Instance.incrementCurrentWinStreak();
 			Application.LoadLevel("03_you_win");
 		} else {
+			//Resetting of the win streak is done in the lose scene, as it's needed to show the user how they did.
 			Application.LoadLevel("04_you_lose");
 		}
 	}
