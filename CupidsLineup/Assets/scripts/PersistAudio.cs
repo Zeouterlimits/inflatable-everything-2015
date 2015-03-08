@@ -18,4 +18,8 @@ public class PersistAudio : MonoBehaviour {
 		}
 		DontDestroyOnLoad(this.gameObject);
 	}
+
+	public void Destroy() {
+		Destroy (this.gameObject);
+	}
 }

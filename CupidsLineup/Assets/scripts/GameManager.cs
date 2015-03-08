@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour {
 		currentStreak = 0;
 	}
 
+	public void stopMusic() {
+		PersistAudio.Instance.Destroy ();
+	}
+
 	public List<Person> getPeopleDone() {
 		if (peopleDone == null) {
 			resetPeopleDone();
