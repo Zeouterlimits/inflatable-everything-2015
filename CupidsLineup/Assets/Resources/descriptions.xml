@@ -70,5 +70,23 @@
 		<feedItems>Photos from Puk fair up on the blog!</feedItems>
 		<feedItems>Up early to get up to Galway!</feedItems>
 	</Person>
+	<Person personName="Madame Bovary">
+		<description>People think my glasses are sexy, but then they look at my legs and cringe. I have 5 dogs and 3 cats. Brutus, Gnasher, Patch, Butch and Fred are my dogs. Purr, Fido and scratcher are my cats! They come to my place of work to eat the worms that infest the place.</description>
+		<head>
+			5
+		</head>
+		<body>
+			0
+		</body>
+		<legs>
+			3
+		</legs>
+		<other>
+			3
+		</other>
+		<feedItems>Have you seen the Washington Post today?</feedItems>
+		<feedItems>Beautiful sunshine, got my pins out!</feedItems>
+		<feedItems></feedItems>
+	</Person>
 </ArrayOfPerson>
 
