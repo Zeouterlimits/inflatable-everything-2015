@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+	<Person personName="Suzanne McFarthing">
+		<description>Overworked and underappreciated at her IT job, Suzy's 'friends' have made her a profile with the hopes of finding much needed stress relief. </description>
+		<head>
+			4
+		</head>
+		<torso>
+			1
+		</torso>
+		<legs>
+			1
+		</legs>
+		<other>
+			1
+		</other>
+		<feedItems>Hello World.</feedItems>
+		<feedItems>Lol.</feedItems>
+	</Person>
+	<Person personName="Amy Schwarz">
+		<description>Hellooooooo!!! I'm Amy! I am a balloon engineer at a new startup in LA. I don't have an inflated ego though XD I have a fear of needles and heights.</description>
+		<head>
+			3
+		</head>
+		<torso>
+			2
+		</torso>
+		<legs>
+			1
+		</legs>
+		<other>
+			1
+		</other>
+		<feedItems>Balloon burst :( Back to work!!</feedItems>
+		<feedItems>Balloons Everywhere! I'm so tired!</feedItems>
+		<feedItems>Thank god for coffee to keep me awake!</feedItems>
+	</Person></ArrayOfPerson>
+

@@ -1,7 +1,9 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Xml.Serialization;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class DescriptionSceneManager : MonoBehaviour {
 
@@ -33,7 +35,8 @@ public class DescriptionSceneManager : MonoBehaviour {
 		girlFeedText2 = GameObject.Find("Desc_FeedText2").GetComponent<Text>();
 		girlFeedText3 = GameObject.Find("Desc_FeedText3").GetComponent<Text>();
 		PopulateGirlArray();
-		float randomGirl = Random.Range(0f, 1.9f);
+		float numPeople = ((float)girlArray.Count) - 0.1f;
+		float randomGirl = Random.Range(0f, numPeople);
 		Debug.Log("Random number was " + randomGirl);
 
 		mainGirl = girlArray[(int)randomGirl];
@@ -90,15 +93,9 @@ public class DescriptionSceneManager : MonoBehaviour {
 	}
 
 	void PopulateGirlArray(){
-		Person girl1 = new Person();
-		girl1.personName = "Hannah Abbot";
-		girl1.description = "I love cheese and bread and butter, with or without pickles. Balloons are my spirit animal.";
-		girl1.feedItems =  new string[] {"OMG LOL I <3 CHEESE", "AMAONAZING SISTA, WELL DONE AT LIFE @ppat"};
-		girlArray.Add(girl1);
-		Person girl2 = new Person();
-		girl2.personName = "Parvati Patil";
-		girl2.description = "Hi I'm parvati and my favorite colour is pink. Divination 4lyf, peace out.";
-		girl2.feedItems =  new string[] {"Oooh, new pibk shoes!#WinningAtLyf", "Hate balloons bursting :'("};
-		girlArray.Add(girl2);
+		XmlSerializer deserialiser = new XmlSerializer(typeof(List<Person>));
+		TextReader descReader = new StreamReader("Assets/Resources/descriptions.xml");
+		girlArray = (List<Person>)deserialiser.Deserialize(descReader);
+		descReader.Close();
 	}
 }
