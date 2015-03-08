@@ -100,7 +100,8 @@ public class DescriptionSceneManager : MonoBehaviour {
 	}
 	void PopulatePeopleArray(){
 		XmlSerializer deserialiser = new XmlSerializer(typeof(List<Person>));
-		TextReader descReader = new StreamReader("Assets/Resources/descriptions.xml");
+		TextAsset descXMLTextAsset = (TextAsset)Resources.Load("descriptions", typeof(TextAsset)); 
+		TextReader descReader = new StringReader(descXMLTextAsset.text);
 		peopleArray = (List<Person>)deserialiser.Deserialize(descReader);
 		descReader.Close();
 	}
