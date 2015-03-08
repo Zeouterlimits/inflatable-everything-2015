@@ -34,5 +34,41 @@
 		<feedItems>Balloon burst :( Back to work!!</feedItems>
 		<feedItems>Balloons Everywhere! I'm so tired!</feedItems>
 		<feedItems>Thank god for coffee to keep me awake!</feedItems>
-	</Person></ArrayOfPerson>
+		</Person>
+	<Person personName="Lilah Tarin">
+		<description>Hi, my name is Lilah, Lil for short.. Which is fitting with my height, I'm 4' 9". I make use of it though! My favorite hobby is pottholing. No, that's not a euphamisim, it means I explore caves! I often get the best pictures because no one else can fit into the small places that I can.. Which I'll admit, I'm pretty proud of.</description>
+		<head>
+			4
+		</head>
+		<torso>
+			2
+		</torso>
+		<legs>
+			4
+		</legs>
+		<other>
+			2
+		</other>
+		<feedItems>Got a cool snap of a stalegtite today!</feedItems>
+		<feedItems>Accident with bleach! I've gone blonde :/</feedItems>
+	</Person>
+	<Person personName="Cranberi Myar">
+		<description>Let's get this out of the way. My parents were farmers and they met picking cranberries. I actually really like my name, it's inspired my signature hair colour, my favorite food and gives me a great domain name for my blog www.cranberi.com.</description>
+		<head>
+			6
+		</head>
+		<torso>
+			1
+		</torso>
+		<legs>
+			4
+		</legs>
+		<other>
+			2
+		</other>
+		<feedItems>Goats have the creepiest eyes!</feedItems>
+		<feedItems>Photos from Puk fair up on the blog!</feedItems>
+		<feedItems>Up early to get up to Galway!</feedItems>
+	</Person>
+</ArrayOfPerson>
 

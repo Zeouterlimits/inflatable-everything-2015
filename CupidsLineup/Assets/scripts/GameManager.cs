@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
 	public string correctLass;
 
 	private Person mainGirl;
+	private List<Person> peopleList;
+	private int maxPeople = 4;
 
 	private static GameManager instance = null;
 	
@@ -21,6 +24,21 @@ public class GameManager : MonoBehaviour {
 			instance = this;
 		}
 		DontDestroyOnLoad(this.gameObject);
+	}
+
+	public int getMaxPeople() {
+		return maxPeople;
+	}
+
+	public List<Person> getPeopleList() {
+		if(peopleList == null) return new List<Person>();
+
+		return peopleList;
+	}
+
+	public void setPeopleList(List<Person> newPeopleList) {
+		peopleList = newPeopleList;
+
 	}
 
 	public Person getMainGirl() {

@@ -13,13 +13,14 @@ public class DescriptionSceneManager : MonoBehaviour {
 	Text girlFeedText1;
 	Text girlFeedText2;
 	Text girlFeedText3;
-    List<Person> girlArray = new List<Person>();
+    List<Person> peopleArray = new List<Person>();
     Person mainGirl;
 	string[] randomFeedItems = {"Weather is perfect for a walk!", ":( it's raining again!", "I hate mondays..", "Just won a Game Jam, so happy!"};
 	float startTime;
 	int countDownTime;
 	int currentTime;
 	int lastKnownTime;
+	int maxPeople;
 
 	public float difficultyTimeDecider = 3f;
 
@@ -34,15 +35,16 @@ public class DescriptionSceneManager : MonoBehaviour {
 		girlFeedText1 = GameObject.Find("Desc_FeedText1").GetComponent<Text>();
 		girlFeedText2 = GameObject.Find("Desc_FeedText2").GetComponent<Text>();
 		girlFeedText3 = GameObject.Find("Desc_FeedText3").GetComponent<Text>();
-		PopulateGirlArray();
-		float numPeople = ((float)girlArray.Count) - 0.1f;
-		float randomGirl = Random.Range(0f, numPeople);
+		maxPeople = GameManager.Instance.getMaxPeople();
+		PopulatePeopleArrayAndTrim();
+		int randomGirl = Random.Range(0, maxPeople); //Max 4 girls
 		Debug.Log("Random number was " + randomGirl);
 
-		mainGirl = girlArray[(int)randomGirl];
+		mainGirl = peopleArray[(int)randomGirl];
 		Debug.Log(mainGirl.personName + " was selected");
 		//GameObject gameManager = GameObject.Find("GameManager");
 		GameManager.Instance.setMainGirl(mainGirl);
+		GameManager.Instance.setPeopleList(peopleArray);
 		
 		LoadDescription(mainGirl);
 	}
@@ -84,18 +86,29 @@ public class DescriptionSceneManager : MonoBehaviour {
 
 	string GetGirlDescFromName(string name) {
 
-		for(int i = 0; i < girlArray.Count; i++) {
-			if(girlArray[i].personName.Equals(name)) {
-		        return girlArray[i].description;
+		for(int i = 0; i < peopleArray.Count; i++) {
+			if(peopleArray[i].personName.Equals(name)) {
+		        return peopleArray[i].description;
 			}
 		}
 		return "I suck at writing descriptions, lol!";
 	}
 
-	void PopulateGirlArray(){
+	void PopulatePeopleArrayAndTrim(){
+		PopulatePeopleArray();
+		TrimPeopleArray(maxPeople);
+	}
+	void PopulatePeopleArray(){
 		XmlSerializer deserialiser = new XmlSerializer(typeof(List<Person>));
 		TextReader descReader = new StreamReader("Assets/Resources/descriptions.xml");
-		girlArray = (List<Person>)deserialiser.Deserialize(descReader);
+		peopleArray = (List<Person>)deserialiser.Deserialize(descReader);
 		descReader.Close();
+	}
+	void TrimPeopleArray(int maxPeople) {
+		int maxRand = peopleArray.Count;
+		while(peopleArray.Count > maxPeople) {
+			peopleArray.RemoveAt(Random.Range(0, maxRand));
+			maxRand --;
+		}
 	}
 }
