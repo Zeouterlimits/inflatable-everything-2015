@@ -36,9 +36,9 @@ public class GameManager : MonoBehaviour {
 
 	public void girlChosen(string chosen) {
 		if(mainGirl.personName.Equals(chosen)) {
-			Application.LoadLevel("03_youWin");
+			Application.LoadLevel("03_you_win");
 		} else {
-			Application.LoadLevel("04_youLose");
+			Application.LoadLevel("04_you_lose");
 		}
 	}
 
